@@ -3,11 +3,13 @@
 echo "Script de instalação:"
 echo -e "[asdf] [neovim] [tmux]\n"
 
-echo -e "\033[32m---------------[ ASDF ]---------------\033[0m\n"
+echo -e "\033[32m---------------[ PACOTES ]---------------\033[0m\n"
 # Instalação de ferramantas de compilação
 sudo pacman -S base-devel --noconfirm
 # Instalar ripgrep
 sudo pacman -S ripgrep --noconfirm
+
+echo -e "\033[32m---------------[ ASDF ]---------------\033[0m\n"
 # Instalação do ASDF via pacman
 git clone https://aur.archlinux.org/asdf-vm.git 
 pushd asdf-vm
@@ -54,9 +56,13 @@ cp -f ./neovim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
 cp -f ./neovim/mappings.lua ~/.config/nvim/lua/mappings.lua
 cp -f ./neovim/options.lua ~/.config/nvim/lua/options.lua
 
+echo -e "\033[32m---------------[ TEMA TMUX ]---------------\033[0m\n"
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cp -f ./tmux/.tmux.conf ~/.tmux.conf
+tmux source ~/.tmux.conf
 
-# echo "--[NEOVIM]--"
+echo "\033[32m Para instalar o tema no TMUX, pressione [prefix] + I"
 
 # nv=$(command -v nvim2)
 
