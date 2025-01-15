@@ -7,12 +7,15 @@ sudo pacman -R base-devel --noconfirm
 # ripgrep
 sudo pacman -R ripgrep --noconfirm
 
-#asdf (plugins e instalações)
+# asdf (plugins e instalações)
 sudo pacman -Rs asdf-vm
 rm -rf "${ASDF_DATA_DIR:-$HOME/.asdf}"
 rm -rf "$HOME/.tool-versions" "$HOME/.asdfrc"
 
-#NvChad
+# NvChad
 rm -rf ~/.config/nvim
 rm -rf ~/.local/state/nvim
 rm -rf ~/.local/share/nvim
+
+# Tmux temas
+rm -rf ~/.tmux*

@@ -3,13 +3,13 @@
 echo "Script de instalação:"
 echo -e "[asdf] [neovim] [tmux]\n"
 
-echo -e "\033[32m---------------[ PACOTES ]---------------\033[0m\n"
+echo -e "\n\033[32m---------------[ PACOTES ]---------------\033[0m\n"
 # Instalação de ferramantas de compilação
 sudo pacman -S base-devel --noconfirm
 # Instalar ripgrep
 sudo pacman -S ripgrep --noconfirm
 
-echo -e "\033[32m---------------[ ASDF ]---------------\033[0m\n"
+echo -e "\n\033[32m---------------[ ASDF ]---------------\033[0m\n"
 # Instalação do ASDF via pacman
 git clone https://aur.archlinux.org/asdf-vm.git 
 pushd asdf-vm
@@ -41,6 +41,16 @@ asdf plugin add lazygit
 asdf install lazygit latest
 asdf global lazygit latest
 
+# NODEJS
+asdf plugin add nodejs
+asdf install nodejs latest
+asdf global nodejs latest
+
+# GOLANG
+asdf plugin add golang
+asdf install golang latest
+asdf global golang latest
+
 echo -e "\n\033[32mInstalando NvChad...\033[0m\n"
 # Remoção de instalações antigas
 rm -rf ~/.config/nvim
@@ -50,19 +60,20 @@ rm -rf ~/.local/share/nvim
 git clone https://github.com/NvChad/starter ~/.config/nvim
 mkdir -p ~/.config/nvim/lua/configs
 mkdir -p ~/.config/nvim/lua/plugins
-cp -rf ./neovim/configs ~/.config/nvim/lua/configs
-cp -rf ./neovim/plugins ~/.config/nvim/lua/plugins
+cp -rf ./neovim/configs ~/.config/nvim/lua/
+cp -rf ./neovim/plugins ~/.config/nvim/lua/
 cp -f ./neovim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
 cp -f ./neovim/mappings.lua ~/.config/nvim/lua/mappings.lua
 cp -f ./neovim/options.lua ~/.config/nvim/lua/options.lua
+rm -rf ~/.config/nvim/.git
 
-echo -e "\033[32m---------------[ TEMA TMUX ]---------------\033[0m\n"
+echo -e "\n\033[32m---------------[ TEMA TMUX ]---------------\033[0m\n"
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cp -f ./tmux/.tmux.conf ~/.tmux.conf
 tmux source ~/.tmux.conf
 
-echo "\033[32m Para instalar o tema no TMUX, pressione [prefix] + I"
+echo -e "\n\033[33m🛈 Para instalar o tema no TMUX, pressione [prefix] + I\n\n"
 
 # nv=$(command -v nvim2)
 
