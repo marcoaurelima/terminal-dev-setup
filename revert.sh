@@ -4,6 +4,8 @@
 
 # base-devel
 sudo pacman -R base-devel --noconfirm
+# ripgrep
+sudo pacman -R ripgrep --noconfirm
 
 #asdf (plugins e instalações)
 sudo pacman -Rs asdf-vm

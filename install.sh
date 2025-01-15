@@ -6,6 +6,8 @@ echo -e "[asdf] [neovim] [tmux]\n"
 echo -e "\033[32m---------------[ ASDF ]---------------\033[0m\n"
 # Instalação de ferramantas de compilação
 sudo pacman -S base-devel --noconfirm
+# Instalar ripgrep
+sudo pacman -S ripgrep --noconfirm
 # Instalação do ASDF via pacman
 git clone https://aur.archlinux.org/asdf-vm.git 
 pushd asdf-vm
@@ -37,7 +39,7 @@ asdf plugin add lazygit
 asdf install lazygit latest
 asdf global lazygit latest
 
-echo -e "\n\033[32mInstalando NvChad...\n"
+echo -e "\n\033[32mInstalando NvChad...\033[0m\n"
 # Remoção de instalações antigas
 rm -rf ~/.config/nvim
 rm -rf ~/.local/state/nvim
