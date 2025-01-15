@@ -11,6 +11,9 @@ git clone https://aur.archlinux.org/asdf-vm.git
 pushd asdf-vm
 makepkg -si --noconfirm
 popd
+# Removendo pasta clone do ASDF
+rm -rf ./asdf-vm
+
 # Inclusão no source do zsh
 echo ". /opt/asdf-vm/asdf.sh" >> ~/.zshrc
 # Recarregar source
