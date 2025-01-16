@@ -4,8 +4,8 @@
 
 # base-devel
 sudo pacman -R base-devel --noconfirm
-# ripgrep
-sudo pacman -R ripgrep --noconfirm
+# xclip
+sudo pacman -R xclip --noconfirm
 
 # asdf (plugins e instalações)
 sudo pacman -Rs asdf-vm
@@ -27,3 +27,5 @@ echo -e "- Retire manualmente do arquivo ~/.zshrc:\033[36m"
 echo -e "  * . /opt/asdf-vm/asdf.sh" 
 echo -e "  * alias c=clear\n  * alias C=clear" 
 echo -e "  * alias x=exit\n  * alias X=exit" 
+
+echo ""

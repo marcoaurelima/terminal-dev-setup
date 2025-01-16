@@ -9,8 +9,8 @@ pushd .
 echo -e "\n\033[32m---------------[ PACOTES ]---------------\033[0m\n"
 # Instalação de ferramantas de compilação
 sudo pacman -S base-devel --noconfirm
-# Instalar ripgrep
-sudo pacman -S ripgrep --noconfirm
+# xclip para neovim acessar area de transferencia
+sudo pacman -S xclip --noconfirm
 
 echo -e "\n\033[32m---------------[ ASDF ]---------------\033[0m\n"
 # Instalação do ASDF via pacman
@@ -53,6 +53,11 @@ asdf plugin add golang
 asdf install golang latest
 asdf global golang latest
 
+# RIPGREP
+asdf plugin add ripgrep
+asdf install ripgrep latest
+asdf global ripgrep latest
+
 # YAY
 asdf plugin add yay
 asdf install yay latest
@@ -90,7 +95,7 @@ echo -e "\n\033[32mINSTALAÇÃO CONCLUÍDA!\n"
 echo -e "\033[0m🛈 Instruções de pós-instalação:"
 echo -e "\033[36m  - Para instalar o tema no TMUX, execute o tmux e pressione [prefix] + I"
 echo -e "\033[36m  - Para instalar os servidores LSP no NEOVIM, execute :MasonInstallAll"
-echo -e "\033[36m    (Faça isso em um novo terminal. Feche o terminal atual)"
+echo -e "\033[36m    (Faça os esses passos em um novo terminal. Feche o terminal atual)"
 
 cd
 
