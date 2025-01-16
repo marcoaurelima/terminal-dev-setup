@@ -3,6 +3,9 @@
 echo "Script de instalação:"
 echo -e "[asdf] [neovim] [tmux]\n"
 
+# salvar diretório atual
+pushd .
+
 echo -e "\n\033[32m---------------[ PACOTES ]---------------\033[0m\n"
 # Instalação de ferramantas de compilação
 sudo pacman -S base-devel --noconfirm
@@ -17,7 +20,6 @@ makepkg -si --noconfirm
 popd
 # Removendo pasta clone do ASDF
 rm -rf ./asdf-vm
-
 # Inclusão no source do zsh
 echo ". /opt/asdf-vm/asdf.sh" >> ~/.zshrc
 # Recarregar source
@@ -51,6 +53,11 @@ asdf plugin add golang
 asdf install golang latest
 asdf global golang latest
 
+# YAY
+asdf plugin add yay
+asdf install yay latest
+asdf global yay latest
+
 echo -e "\n\033[32mInstalando NvChad...\033[0m\n"
 # Remoção de instalações antigas
 rm -rf ~/.config/nvim
@@ -73,14 +80,20 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cp -f ./tmux/.tmux.conf ~/.tmux.conf
 tmux source ~/.tmux.conf
 
-echo -e "\n\033[33m🛈 Para instalar o tema no TMUX, pressione [prefix] + I\n\n"
+# incluindo algus alias no zsh
+echo -e "alias c=clear\nalias C=clear" >> ~/.zshrc
+echo -e "alias x=exit\nalias X=exit" >> ~/.zshrc
+echo -e "alias gr=\"go run .\" >>" ~/.zshrc
 
-# nv=$(command -v nvim2)
+echo -e "\n\033[32mINSTALAÇÃO CONCLUÍDA!\n"
 
-# if [ -z "$nv" ]; then 
-#     echo "Neovim não encontrado. Instale antes de prosseguir"
-#     exit 1
-# fi
+echo -e "\033[0m🛈 Instruções de pós-instalação:"
+echo -e "\033[36m  - Para instalar o tema no TMUX, execute o tmux e pressione [prefix] + I"
+echo -e "\033[36m  - Para instalar os servidores LSP no NEOVIM, execute :MasonInstallAll"
+echo -e "\033[36m    (Faça isso em um novo terminal. Feche o terminal atual)"
 
+cd
 
-# echo "$nv"
+echo -e "\n\033[0mPressione qualquer tecla para sair..."
+read -n 1 -s
+exit 0
