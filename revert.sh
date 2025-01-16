@@ -9,8 +9,8 @@ sudo pacman -R ripgrep --noconfirm
 
 # asdf (plugins e instalações)
 sudo pacman -Rs asdf-vm
-rm -rf "${ASDF_DATA_DIR:-$HOME/.asdf}"
-rm -rf "$HOME/.tool-versions" "$HOME/.asdfrc"
+sudo rm -rf "${ASDF_DATA_DIR:-$HOME/.asdf}"
+sudo rm -rf "$HOME/.tool-versions" "$HOME/.asdfrc"
 
 # NvChad
 rm -rf ~/.config/nvim
