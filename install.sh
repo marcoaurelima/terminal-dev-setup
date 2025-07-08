@@ -21,7 +21,7 @@ popd
 # Removendo pasta clone do ASDF
 rm -rf ./asdf-vm
 # Inclusão no source do zsh
-echo ". /opt/asdf-vm/asdf.sh" >> ~/.zshrc
+echo -e "\nexport PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"" >> ~/.zshrc
 # Recarregar source
 source ~/.zshrc
 
@@ -31,37 +31,37 @@ echo -e "\n\033[32mInstalando \033[34m[NEOVIM]\033[32m \033[34m[TMUX] \033[34m[L
 # NEOVIM
 asdf plugin add neovim
 asdf install neovim latest
-asdf global neovim latest
+asdf set -u neovim latest
 
 # TMUX
 asdf plugin add tmux
 asdf install tmux latest
-asdf global tmux latest
+asdf set -u tmux latest
 
 # LAZYGIT
 asdf plugin add lazygit
 asdf install lazygit latest
-asdf global lazygit latest
+asdf set -u lazygit latest
 
 # NODEJS
 asdf plugin add nodejs
 asdf install nodejs latest
-asdf global nodejs latest
+asdf set -u nodejs latest
 
 # GOLANG
 asdf plugin add golang
 asdf install golang latest
-asdf global golang latest
+asdf set -u golang latest
 
 # RIPGREP
 asdf plugin add ripgrep
 asdf install ripgrep latest
-asdf global ripgrep latest
+asdf set -u ripgrep latest
 
 # YAY
 asdf plugin add yay
 asdf install yay latest
-asdf global yay latest
+asdf set -u yay latest
 
 echo -e "\n\033[32mInstalando NvChad...\033[0m\n"
 # Remoção de instalações antigas
