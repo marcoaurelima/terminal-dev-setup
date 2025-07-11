@@ -63,6 +63,11 @@ asdf plugin add yay
 asdf install yay latest
 asdf set -u yay latest
 
+# DELTA
+asdf plugin add delta
+asdf install delta latest
+asdf set -u delta latest
+
 echo -e "\n\033[32mInstalando NvChad...\033[0m\n"
 # Remoção de instalações antigas
 rm -rf ~/.config/nvim
@@ -78,6 +83,10 @@ cp -f ./neovim/chadrc.lua ~/.config/nvim/lua/chadrc.lua
 cp -f ./neovim/mappings.lua ~/.config/nvim/lua/mappings.lua
 cp -f ./neovim/options.lua ~/.config/nvim/lua/options.lua
 rm -rf ~/.config/nvim/.git
+
+echo -e "\n\033[32mConfigurando Lazygit...\033[0m\n"
+rm -f ~/.config/lazygit/config.yml 
+cp -f ./lazygit/config.yml ~/.config/lazygit/config.yml 
 
 echo -e "\n\033[32m---------------[ TEMA TMUX ]---------------\033[0m\n"
 

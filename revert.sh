@@ -17,6 +17,9 @@ rm -rf ~/.config/nvim
 rm -rf ~/.local/state/nvim
 rm -rf ~/.local/share/nvim
 
+# Lazygit config
+rm -f ~/.config/lazygit/config.yml 
+
 # Tmux temas
 rm -rf ~/.tmux*
 

@@ -1,0 +1,12 @@
+# Config relating to the Lazygit UI
+gui:
+  theme:
+    selectedLineBgColor:
+      - black
+      - bold
+
+  nerdFontsVersion: "3"
+
+git:
+  paging:
+    pager: "delta --dark --paging=never"
