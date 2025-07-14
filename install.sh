@@ -6,6 +6,7 @@ source script/pre.install.sh
 source script/asdf.install.sh
 source script/nvchad.install.sh
 source script/tmux.theme.install.sh
+source script/lazygit.config.sh
 source script/pos.install.sh
 source script/finished.sh
 
@@ -14,6 +15,7 @@ pre_install
 install_asdf
 install_nvchad
 tmux_theme_install
+lazygit_config_install
 pos_install
 finished
 
