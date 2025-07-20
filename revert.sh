@@ -7,6 +7,12 @@ sudo pacman -R base-devel --noconfirm
 # xclip
 sudo pacman -R xclip --noconfirm
 
+# nerd-fonts
+sudo pacman -R ttf-martian-mono-nerd --noconfirm
+sudo pacman -R ttf-jetbrains-mono-nerd --noconfirm
+sudo pacman -R ttf-bigblueterminal-nerd --noconfirm
+sudo pacman -R otf-hermit-nerd --noconfirm
+
 # asdf (plugins e instalações)
 sudo pacman -Rs asdf-vm
 sudo rm -rf "${ASDF_DATA_DIR:-$HOME/.asdf}"
