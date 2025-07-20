@@ -11,6 +11,7 @@ sudo pacman -R xclip --noconfirm
 sudo pacman -Rs asdf-vm
 sudo rm -rf "${ASDF_DATA_DIR:-$HOME/.asdf}"
 sudo rm -rf "$HOME/.tool-versions" "$HOME/.asdfrc"
+rm -rf ./asdf-vm
 
 # NvChad
 rm -rf ~/.config/nvim
