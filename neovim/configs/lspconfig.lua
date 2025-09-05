@@ -5,7 +5,7 @@ local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "html", "cssls", "clangd", "pyright" }
+local servers = { "html", "cssls", "clangd", "pyright", "ts_ls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
