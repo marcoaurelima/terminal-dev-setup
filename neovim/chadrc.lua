@@ -6,11 +6,20 @@
 local M = {}
 
 M.base46 = {
-  theme = "everblush",
+  theme = "onedark",
 
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
+    -- Modified
+    -- Git icons
+    NvimTreeGitDirty = { fg = "#E5C07B" },
+    NvimTreeGitNew = { fg = "#98C379" },
+    NvimTreeGitDeleted = { fg = "#E06C75" },
+    NvimTreeGitRenamed = { fg = "#61AFEF" },
+    NvimTreeGitMerge = { fg = "#C678DD" },
+    NvimTreeGitIgnored = { fg = "#5C6370" },
+    NvimTreeGitStaged = { fg = "#98C379" },
   },
 }
 
@@ -33,14 +42,14 @@ M.ui = {
   },
 
   statusline = {
-    theme = "minimal",
+    theme = "vscode_colored",
     separator_style = "round",
   },
 
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
   },
 }
 

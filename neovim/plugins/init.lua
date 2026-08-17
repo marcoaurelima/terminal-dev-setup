@@ -14,23 +14,6 @@ return {
   },
 
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
-        "css-lsp",
-        "prettier",
-        "gopls",
-        "clangd",
-        "typescript-language-server",
-        "pyright",
-      },
-    },
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
@@ -66,8 +49,44 @@ return {
         "c_sharp",
         "bash",
         "awk",
-        "angular"
+        "angular",
       },
     },
   },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+
+    opts = {
+      renderer = {
+        icons = {
+          git_placement = "after",
+
+          glyphs = {
+            git = {
+              unstaged = "●",
+              staged = "󰄬",
+              unmerged = "",
+              renamed = "󰏫",
+              untracked = "+",
+              deleted = "×",
+              ignored = ":◌",
+            },
+          },
+        },
+      },
+    },
+  },
+  -- test new blink
+  -- { import = "nvchad.blink.lazyspec" },
+
+  -- {
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"vim", "lua", "vimdoc",
+  --      "html", "css"
+  -- 		},
+  -- 	},
+  -- },
 }

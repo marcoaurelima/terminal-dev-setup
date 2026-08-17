@@ -40,9 +40,66 @@ return {
     },
   },
   config = function(plugin, opts)
-    vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
-    vim.fn.sign_define("DapStopped", { text = "👉", texthl = "", linehl = "", numhl = "" })
+    -- Breakpoint
+    vim.fn.sign_define("DapBreakpoint", {
+      text = "",
+      texthl = "DapBreakpoint",
+      numhl = "DapBreakpoint",
+    })
 
+    -- Breakpoint condicional
+    vim.fn.sign_define("DapBreakpointCondition", {
+      text = "",
+      texthl = "DapBreakpointCondition",
+      numhl = "DapBreakpointCondition",
+    })
+
+    -- Breakpoint rejeitado
+    vim.fn.sign_define("DapBreakpointRejected", {
+      text = "",
+      texthl = "DapBreakpointRejected",
+      numhl = "DapBreakpointRejected",
+    })
+
+    -- Logpoint
+    vim.fn.sign_define("DapLogPoint", {
+      text = "",
+      texthl = "DapLogPoint",
+      numhl = "DapLogPoint",
+    })
+
+    -- Linha atual (parado no debugger)
+    vim.fn.sign_define("DapStopped", {
+      text = "",
+      texthl = "DapStopped",
+      linehl = "DapStoppedLine",
+      numhl = "DapStopped",
+    })
+
+    vim.api.nvim_set_hl(0, "DapBreakpoint", {
+      fg = "#E51400",
+    })
+
+    vim.api.nvim_set_hl(0, "DapBreakpointCondition", {
+      fg = "#FFCC00",
+    })
+
+    vim.api.nvim_set_hl(0, "DapBreakpointRejected", {
+      fg = "#888888",
+    })
+
+    vim.api.nvim_set_hl(0, "DapLogPoint", {
+      fg = "#3FB950",
+    })
+
+    vim.api.nvim_set_hl(0, "DapStopped", {
+      fg = "#FFCC00",
+      bold = true,
+    })
+
+    vim.api.nvim_set_hl(0, "DapStoppedLine", {
+      bg = "#2A2D2E",
+    })
     require("nvim-dap-virtual-text").setup {
       commented = true,
     }
@@ -60,14 +117,25 @@ return {
       dapui.close()
     end
 
-    dap.adapters.delve = {
-      type = "server",
-      port = "${port}",
-      executable = {
-        command = "dlv",
-        args = { "dap", "-l", "127.0.0.1:${port}" },
-      },
-    }
+    dap.adapters.delve = function(callback, config)
+      if config.mode == "remote" and config.request == "attach" then
+        callback {
+          type = "server",
+          host = config.host or "127.0.0.1",
+          port = config.port or "38697",
+        }
+      else
+        callback {
+          type = "server",
+          port = "${port}",
+          executable = {
+            command = "dlv",
+            args = { "dap", "-l", "127.0.0.1:${port}", "--log", "--log-output=dap" },
+            detached = vim.fn.has "win32" == 0,
+          },
+        }
+      end
+    end
 
     -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
     dap.configurations.go = {
@@ -76,6 +144,7 @@ return {
         name = "Debug",
         request = "launch",
         program = "${file}",
+        console = "externalTerminal",
       },
       {
         type = "delve",
@@ -83,6 +152,7 @@ return {
         request = "launch",
         mode = "test",
         program = "${file}",
+        console = "externalTerminal",
       },
       -- works with go.mod packages and sub packages
       {
@@ -91,6 +161,7 @@ return {
         request = "launch",
         mode = "test",
         program = "./${relativeFileDirname}",
+        console = "externalTerminal",
       },
     }
 

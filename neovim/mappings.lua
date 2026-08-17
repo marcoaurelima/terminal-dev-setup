@@ -14,7 +14,7 @@ map("n", "<leader>X", ":BufOnly<CR>", { desc = "BufOnly" })
 
 -- Split
 map("n", "|", ":vsp<CR>", { desc = "Split Vertical" })
-map("n", "<leader><ESC>", ":q<CR>", { desc = "Close cmd" })
+-- map("n", "<leader><ESC>", ":q<CR>", { desc = "Close cmd" })
 
 -- File Changes
 map("n", "<leader>rr", ":edit!<CR>", { desc = "Discard file changes" })
@@ -43,23 +43,23 @@ map("n", "<leader>]]", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "LSP 
 map("n", "<leader>[[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "LSP Diagnostic Prev" })
 
 -- Flutter Development
-map("n", "<leader>flr", "<cmd> FlutterRun <CR>", { desc = "Flutter Run" })
-map("n", "<leader>fle", "<cmd> FlutterEmulators <CR>", { desc = "Flutter Emulators" })
-map("n", "<leader>fld", "<cmd> FlutterDevices <CR>", { desc = "Flutter Devices" })
-map("n", "<leader>flRl", "<cmd> FlutterReload <CR>", { desc = "Flutter Reload" })
-map("n", "<leader>flRt", "<cmd> FlutterRestart <CR>", { desc = "Flutter Restart" })
-map("n", "<leader>flq", "<cmd> FlutterQuit <CR>", { desc = "Flutter Quit" })
-map("n", "<leader>flD", "<cmd> FlutterDetach <CR>", { desc = "Flutter Detach" })
-map("n", "<leader>flO", "<cmd> FlutterOutlineToggle <CR>", { desc = "Flutter Outline Toggle" })
-map("n", "<leader>flo", "<cmd> FlutterOutlineOpen <CR>", { desc = "Flutter Outline Open" })
-map("n", "<leader>flt", "<cmd> FlutterDevTools <CR>", { desc = "Flutter Dev Tools" })
-map("n", "<leader>flT", "<cmd> FlutterDevToolsActivate <CR>", { desc = "Flutter Dev Tools Activate" })
-map("n", "<leader>flc", "<cmd> FlutterCopyProfilerUrl <CR>", { desc = "Flutter Copy Profile Url" })
-map("n", "<leader>fll", "<cmd> FlutterLspRestart <CR>", { desc = "Flutter LSP Restart" })
-map("n", "<leader>fls", "<cmd> FlutterSuper <CR>", { desc = "Flutter Super" })
-map("n", "<leader>fly", "<cmd> FlutterReanalyze <CR>", { desc = "Flutter Reanalyze" })
-map("n", "<leader>fln", "<cmd> FlutterRename <CR>", { desc = "Flutter Rename" })
-
+-- map("n", "<leader>flr", "<cmd> FlutterRun <CR>", { desc = "Flutter Run" })
+-- map("n", "<leader>fle", "<cmd> FlutterEmulators <CR>", { desc = "Flutter Emulators" })
+-- map("n", "<leader>fld", "<cmd> FlutterDevices <CR>", { desc = "Flutter Devices" })
+-- map("n", "<leader>flRl", "<cmd> FlutterReload <CR>", { desc = "Flutter Reload" })
+-- map("n", "<leader>flRt", "<cmd> FlutterRestart <CR>", { desc = "Flutter Restart" })
+-- map("n", "<leader>flq", "<cmd> FlutterQuit <CR>", { desc = "Flutter Quit" })
+-- map("n", "<leader>flD", "<cmd> FlutterDetach <CR>", { desc = "Flutter Detach" })
+-- map("n", "<leader>flO", "<cmd> FlutterOutlineToggle <CR>", { desc = "Flutter Outline Toggle" })
+-- map("n", "<leader>flo", "<cmd> FlutterOutlineOpen <CR>", { desc = "Flutter Outline Open" })
+-- map("n", "<leader>flt", "<cmd> FlutterDevTools <CR>", { desc = "Flutter Dev Tools" })
+-- map("n", "<leader>flT", "<cmd> FlutterDevToolsActivate <CR>", { desc = "Flutter Dev Tools Activate" })
+-- map("n", "<leader>flc", "<cmd> FlutterCopyProfilerUrl <CR>", { desc = "Flutter Copy Profile Url" })
+-- map("n", "<leader>fll", "<cmd> FlutterLspRestart <CR>", { desc = "Flutter LSP Restart" })
+-- map("n", "<leader>fls", "<cmd> FlutterSuper <CR>", { desc = "Flutter Super" })
+-- map("n", "<leader>fly", "<cmd> FlutterReanalyze <CR>", { desc = "Flutter Reanalyze" })
+-- map("n", "<leader>fln", "<cmd> FlutterRename <CR>", { desc = "Flutter Rename" })
+--
 -- Move
 map("n", "g\\", "^", { desc = "Go to begin of line" })
 map("n", "g/", "g_", { desc = "Go to end of line" })
